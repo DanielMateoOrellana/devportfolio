@@ -72,7 +72,7 @@ export default function Hero() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: d(1300), duration: d(800), ease: EASE_EXPO }}
               className="font-syne font-black leading-none tracking-tighter text-body"
-              style={{ fontSize: 'clamp(3.8rem, 9vw, 7.5rem)' }}
+              style={{ fontSize: 'clamp(2.6rem, 10vw, 7.5rem)' }}
             >
               DANIEL
             </motion.p>
@@ -83,7 +83,7 @@ export default function Hero() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: d(1460), duration: d(800), ease: EASE_EXPO }}
               className="font-syne font-black leading-none tracking-tighter text-amber"
-              style={{ fontSize: 'clamp(3.8rem, 9vw, 7.5rem)' }}
+              style={{ fontSize: 'clamp(2.6rem, 10vw, 7.5rem)' }}
             >
               MATEO
             </motion.p>

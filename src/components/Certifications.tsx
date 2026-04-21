@@ -98,11 +98,11 @@ export default function Certifications() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="gap-px bg-wire"
-              style={{
-                display: 'grid',
-                gridTemplateColumns: `repeat(${Math.min(Object.keys(grouped).length, 3)}, minmax(0, 1fr))`,
-              }}
+              className={`grid gap-px bg-wire grid-cols-1 ${
+                Object.keys(grouped).length >= 2 ? 'md:grid-cols-2' : ''
+              } ${
+                Object.keys(grouped).length >= 3 ? 'lg:grid-cols-3' : ''
+              }`}
             >
               {Object.entries(grouped).map(([institution, certs]) => {
                 const isSoleInstitution = Object.keys(grouped).length === 1
@@ -126,11 +126,11 @@ export default function Certifications() {
                       </p>
                     </div>
 
-                    {/* Cert list — 2 columns only when filtered to a single institution with many items */}
+                    {/* Cert list — 2 columns only when filtered to a single institution with many items, sm+ only */}
                     <ul
                       className={`flex-1 ${
                         showTwoCols
-                          ? 'grid grid-cols-2 gap-x-8 gap-y-3 items-start'
+                          ? 'grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 items-start'
                           : 'space-y-3'
                       }`}
                     >
