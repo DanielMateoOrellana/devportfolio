@@ -46,7 +46,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       </h3>
 
       {/* Description */}
-      <p className="font-mono text-xs text-mid leading-relaxed mb-5 flex-1">
+      <p className="font-mono text-sm text-body leading-relaxed mb-5 flex-1">
         {project.description}
       </p>
 
@@ -56,7 +56,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <span
             key={tech}
             role="listitem"
-            className="font-mono text-[10px] text-ghost border border-wire px-2 py-0.5 tracking-wider"
+            className="font-mono text-[11px] text-amber/70 border border-amber/20 bg-amber/5 px-2 py-0.5 tracking-wider hover:text-amber hover:border-amber/50 transition-all duration-150"
           >
             {tech}
           </span>

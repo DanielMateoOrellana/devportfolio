@@ -13,7 +13,7 @@ export default {
         elevated: '#16161E',
         wire: '#1E1E28',
         body: '#EDEDE5',
-        mid: '#6B6B7A',
+        mid: '#B8B8C4',
         ghost: '#3A3A48',
         amber: {
           DEFAULT: '#E8641A',

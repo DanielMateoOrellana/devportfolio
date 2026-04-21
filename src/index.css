@@ -26,6 +26,10 @@ html {
   }
 }
 
+html {
+  font-size: 18px;
+}
+
 body {
   background-color: #09090E;
   color: #EDEDE5;

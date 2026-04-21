@@ -40,30 +40,30 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Bio + metadata */}
           <motion.div {...reveal(0.08)}>
-            <p className="font-mono text-sm text-mid leading-relaxed mb-8">
+            <p className="font-mono text-sm text-body leading-relaxed mb-8">
               {personal.bio}
             </p>
 
-            <div className="space-y-2 border-t border-wire pt-6">
+            <div className="border-t border-wire pt-6 space-y-0">
               {[
                 { label: 'Universidad', value: 'ESPOL' },
                 { label: 'Título', value: personal.degree },
                 { label: 'Ubicación', value: personal.location },
                 { label: 'Idiomas', value: 'Español · Inglés (B2)' },
               ].map(({ label, value }) => (
-                <div key={label} className="flex gap-4 font-mono text-xs">
-                  <span className="text-ghost w-24 shrink-0">{label}</span>
-                  <span className="text-mid">{value}</span>
+                <div key={label} className="flex items-center justify-between border-b border-wire py-3 group">
+                  <span className="font-mono text-xs text-mid tracking-widest uppercase">{label}</span>
+                  <span className="font-syne font-bold text-base text-body group-hover:text-amber transition-colors duration-150 text-right">{value}</span>
                 </div>
               ))}
             </div>
 
             {/* Soft skills */}
-            <div className="mt-8">
-              <p className="font-mono text-xs text-ghost tracking-widest mb-4 uppercase">
+            <div className="mt-10">
+              <p className="font-mono text-xs text-amber tracking-widest mb-5 uppercase">
                 Habilidades blandas
               </p>
-              <ul className="space-y-1">
+              <ul className="space-y-2">
                 {[
                   'Resolución de problemas en sistemas distribuidos',
                   'Gestión de requerimientos con stakeholders',
@@ -71,7 +71,7 @@ export default function About() {
                   'Aprendizaje autónomo continuo',
                   'Trabajo en equipo Scrum/Kanban',
                 ].map((skill) => (
-                  <li key={skill} className="flex items-start gap-3 font-mono text-xs text-mid">
+                  <li key={skill} className="flex items-start gap-3 font-mono text-sm text-body hover:text-amber transition-colors duration-150 cursor-default">
                     <span className="text-amber shrink-0 mt-0.5">→</span>
                     {skill}
                   </li>
@@ -106,7 +106,7 @@ export default function About() {
                     >
                       {layer}
                     </span>
-                    <p className="font-mono text-xs text-mid leading-relaxed group-hover:text-body transition-colors duration-200">
+                    <p className="font-mono text-sm text-body leading-relaxed group-hover:text-amber transition-colors duration-200">
                       {techs.join('  ·  ')}
                     </p>
                   </div>

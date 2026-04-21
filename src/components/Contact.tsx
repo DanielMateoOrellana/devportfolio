@@ -71,7 +71,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: EASE_EXPO }}
-              className="font-mono text-sm text-mid leading-relaxed mb-8"
+              className="font-mono text-sm text-body leading-relaxed mb-8"
             >
               Disponible para oportunidades full-time, colaboraciones técnicas
               o simplemente para hablar de arquitectura de sistemas.

@@ -99,7 +99,7 @@ export const projects: Project[] = [
     number: '01',
     title: 'Sistema de Gestión Documental FIEC',
     description:
-      'Plataforma full-stack de tesis para la Facultad de Ingeniería en Electricidad y Computación de ESPOL. Gestiona procesos documentales con plantillas configurables, versionado de archivos por pasos, delegación de procesos y roles de usuario (Admin, Gestor, Lector, Ayudante). Exporta reportes ZIP. Actualmente en producción sirviendo a toda la FIEC.',
+      'Plataforma full-stack desarrollada a modo de tesis para la Facultad de Ingeniería en Electricidad y Computación de ESPOL. Gestiona procesos documentales con plantillas configurables, versionado de archivos por pasos, delegación de procesos y roles de usuario (Admin, Gestor, Lector, Ayudante). Exporta reportes ZIP. Actualmente en producción sirviendo a toda la FIEC.',
     status: 'PRODUCCIÓN',
     stack: [
       'React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'shadcn/ui',
@@ -109,9 +109,9 @@ export const projects: Project[] = [
   {
     id: 'elishop',
     number: '02',
-    title: 'Elishop',
+    title: 'Elis_shop.ec',
     description:
-      'Monorepo de e-commerce con landing page, catálogo de productos y sistema de inventario. API REST con autenticación JWT, imágenes almacenadas en Cloudflare R2. Desplegado en Vercel, Render y Neon con cero cold-start en el frontend.',
+      'Monorepo de e-commerce con landing page, catálogo de productos y sistema de inventario. API REST con autenticación JWT, imágenes almacenadas en Cloudflare R2. Desplegado en Vercel, Render y Neon con cero cold-start.',
     status: 'LIVE',
     stack: [
       'React 19', 'Vite', 'NestJS', 'TypeScript',

@@ -116,7 +116,7 @@ export default function Certifications() {
                       <div className="flex items-center gap-3 mb-2">
                         {meta && (
                           <div
-                            className="w-8 h-8 flex items-center justify-center rounded flex-shrink-0 p-1.5"
+                            className="w-14 h-14 flex items-center justify-center rounded flex-shrink-0 p-2.5"
                             style={{ background: meta.bg }}
                           >
                             <img
@@ -147,7 +147,7 @@ export default function Certifications() {
                     >
                       {certs.map((cert) => (
                         <li key={cert.name} className="group/cert">
-                          <p className="font-mono text-xs text-mid leading-snug group-hover/cert:text-body transition-colors duration-150">
+                          <p className="font-mono text-sm text-body leading-snug group-hover/cert:text-amber transition-colors duration-150">
                             {cert.name}
                           </p>
                           <p className="font-mono text-[10px] text-ghost mt-0.5">{cert.date}</p>
