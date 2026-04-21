@@ -58,26 +58,26 @@ export default function Experience() {
                     }`}
                   />
 
-                  <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-6 lg:gap-10">
+                  <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-6 lg:gap-10">
                     {/* Left: company meta */}
-                    <div>
+                    <div className="min-w-0 pr-4">
                       <p className="font-mono text-[10px] text-ghost tracking-widest mb-3 uppercase">
                         {item.period}
                       </p>
 
                       {/* Logo + company name */}
-                      <div className="flex items-center gap-3 mb-2">
+                      <div className="flex flex-wrap items-center gap-4 mb-2">
                         {logo && (
-                          <div className="w-16 h-16 rounded border border-wire flex items-center justify-center overflow-hidden bg-white/5 flex-shrink-0">
+                          <div className="w-16 h-16 rounded-xl border border-wire flex items-center justify-center overflow-hidden bg-white flex-shrink-0 shadow-sm">
                             <img
                               src={logo}
                               alt={`${item.company} logo`}
-                              className="w-full h-full object-contain p-1"
+                              className="w-[85%] h-[85%] object-contain"
                               loading="lazy"
                             />
                           </div>
                         )}
-                        <h3 className="font-syne font-black text-2xl text-body leading-tight">
+                        <h3 className="font-syne font-black text-2xl text-body leading-tight break-words min-w-0 flex-1">
                           {item.company}
                         </h3>
                       </div>
