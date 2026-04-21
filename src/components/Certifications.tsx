@@ -4,13 +4,13 @@ import { certifications, certInstitutions } from '../data/portfolio'
 
 const EASE_EXPO = [0.16, 1, 0.3, 1] as const
 
-const institutionColors: Record<string, string> = {
-  Anthropic: '#E8641A',
-  AWS: '#FF9900',
-  Platzi: '#98CA3F',
-  HackerRank: '#00EA64',
-  freeCodeCamp: '#0A0A23',
-  'OpenCV University': '#00C9A7',
+const institutionMeta: Record<string, { logo: string; bg: string }> = {
+  Anthropic:          { logo: '/logos/anthropic.svg',   bg: 'rgba(232, 100, 26, 0.08)' },
+  AWS:                { logo: '/logos/aws.svg',          bg: 'rgba(255, 153, 0, 0.08)'  },
+  Platzi:             { logo: '/logos/platzi.svg',       bg: 'rgba(152, 202, 63, 0.08)' },
+  HackerRank:         { logo: '/logos/hackerrank.svg',   bg: 'rgba(0, 234, 100, 0.08)'  },
+  freeCodeCamp:       { logo: '/logos/freecodecamp.svg', bg: 'rgba(237, 237, 229, 0.06)'},
+  'OpenCV University':{ logo: '/logos/opencv.svg',       bg: 'rgba(0, 201, 167, 0.08)'  },
 }
 
 export default function Certifications() {
@@ -47,7 +47,7 @@ export default function Certifications() {
               className="font-syne font-black tracking-tighter text-body"
               style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
             >
-              CREDENCIALES
+              CERTIFICACIONES
             </h2>
             <p className="font-mono text-xs text-ghost tracking-widest">
               {certifications.length} certificaciones
@@ -89,7 +89,7 @@ export default function Certifications() {
           })}
         </motion.div>
 
-        {/* Newspaper grid */}
+        {/* Grid */}
         <div id="certs-grid" role="tabpanel" aria-label={`Certificaciones de ${active}`}>
           <AnimatePresence mode="wait">
             <motion.div
@@ -107,16 +107,27 @@ export default function Certifications() {
               {Object.entries(grouped).map(([institution, certs]) => {
                 const isSoleInstitution = Object.keys(grouped).length === 1
                 const showTwoCols = certs.length > 6 && isSoleInstitution
+                const meta = institutionMeta[institution]
+
                 return (
                   <div key={institution} className="bg-bg p-6 flex flex-col">
-                    {/* Institution header */}
+                    {/* Institution header with logo */}
                     <div className="mb-5 pb-4 border-b border-wire">
-                      <div className="flex items-center gap-2 mb-1">
-                        <div
-                          aria-hidden="true"
-                          className="w-2 h-2 rounded-full flex-shrink-0"
-                          style={{ backgroundColor: institutionColors[institution] ?? '#6B6B7A' }}
-                        />
+                      <div className="flex items-center gap-3 mb-2">
+                        {meta && (
+                          <div
+                            className="w-8 h-8 flex items-center justify-center rounded flex-shrink-0 p-1.5"
+                            style={{ background: meta.bg }}
+                          >
+                            <img
+                              src={meta.logo}
+                              alt={`${institution} logo`}
+                              className="w-full h-full object-contain"
+                              style={{ filter: 'brightness(0) invert(1)' }}
+                              loading="lazy"
+                            />
+                          </div>
+                        )}
                         <h3 className="font-syne font-black text-xl text-body leading-tight">
                           {institution}
                         </h3>
@@ -126,7 +137,7 @@ export default function Certifications() {
                       </p>
                     </div>
 
-                    {/* Cert list — 2 columns only when filtered to a single institution with many items, sm+ only */}
+                    {/* Cert list */}
                     <ul
                       className={`flex-1 ${
                         showTwoCols

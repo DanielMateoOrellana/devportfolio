@@ -5,7 +5,7 @@ const navLinks = [
   { href: '#about', label: '// QUIÉN SOY' },
   { href: '#experience', label: 'TRAYECTORIA' },
   { href: '#projects', label: 'PROYECTOS' },
-  { href: '#certs', label: 'CREDENCIALES' },
+  { href: '#certs', label: 'CERTIFICACIONES' },
   { href: '#contact', label: 'CONTACTO' },
 ]
 
